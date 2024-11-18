@@ -7,6 +7,9 @@ export default function Index() {
   const handlePress = () => {
     router.push("counter");
   };
+  const listCocktails = () => {
+    router.push("liste");
+  };
 
   return (
     <View style={styles.container}>
@@ -31,7 +34,9 @@ export default function Index() {
         <Text style={styles.cocktail}>
           3. Margarita - Tequila, triple sec, jus de citron vert
         </Text>
+        <Button title="Voir liste des cocktails" onPress={listCocktails} />
       </View>
+
       <View style={styles.footer}>
         <Text style={styles.text}>© 2024 VotreNom. Tous droits réservés.</Text>
       </View>
