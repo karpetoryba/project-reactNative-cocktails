@@ -18,7 +18,7 @@ export default function Index() {
         <Text style={styles.soustext}>
           Les meilleurs cocktails de Bordeaux:
         </Text>
-        <Button title="Voir tous les cocktails" onPress={handlePress} />
+        <Button title="Commender des coctails" onPress={handlePress} />
         <Text style={styles.centretext}>
           Un cocktail est une boisson réalisée en mélangeant différents
           ingrédients, généralement des alcools, des jus de fruits, des sodas,
