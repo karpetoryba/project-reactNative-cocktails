@@ -1,18 +1,27 @@
+import { useRouter } from "expo-router";
 import { Button, Text, View, StyleSheet } from "react-native";
 
 export default function Index() {
+  const router = useRouter();
+
+  const handlePress = () => {
+    router.push("counter");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}> Coktails </Text>
-        <Text style={styles.soustext}>Les meilleurs coctails de Bordeaux:</Text>
-        <Button title="Voir tous les coctails" />
+        <Text style={styles.title}>Cocktails</Text>
+        <Text style={styles.soustext}>
+          Les meilleurs cocktails de Bordeaux:
+        </Text>
+        <Button title="Voir tous les cocktails" onPress={handlePress} />
         <Text style={styles.centretext}>
           Un cocktail est une boisson réalisée en mélangeant différents
           ingrédients, généralement des alcools, des jus de fruits, des sodas,
-          des sirops, et parfois même des épices ou des herbes aromatiques.{" "}
+          des sirops, et parfois même des épices ou des herbes aromatiques.
         </Text>
-        <Text style={styles.maintitle}> Les meilleurs coctails: </Text>
+        <Text style={styles.maintitle}>Les meilleurs cocktails:</Text>
         <Text style={styles.cocktail}>
           1. Mojito - Rhum, menthe, sucre, citron vert, eau gazeuse
         </Text>
