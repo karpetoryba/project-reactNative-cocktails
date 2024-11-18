@@ -1,10 +1,11 @@
 import { useRoute } from "@react-navigation/native";
-import { router } from "expo-router";
+import { router, useRouter } from "expo-router";
 import React from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import { Button } from "react-native";
 
 export default function CocktailsScreen() {
+  const router = useRouter();
   const cocktailsList = [
     {
       id: 1,
@@ -37,8 +38,8 @@ export default function CocktailsScreen() {
     </View>
   );
 
-  const handleNavigateToCocktailDetails = () => {
-    router.push(`liste/1`);
+  const handleNavigateToCocktailDetails = (cocktailId: number) => {
+    router.push("liste/" + cocktailId);
   };
   return (
     <View style={styles.container}>
@@ -51,7 +52,7 @@ export default function CocktailsScreen() {
             <Text>{item.title}</Text>
             <Button
               title="Voir le cocktail"
-              onPress={() => handleNavigateToCocktailDetails()}
+              onPress={() => handleNavigateToCocktailDetails(item.id)}
             />
           </View>
         )}
