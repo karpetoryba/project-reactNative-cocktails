@@ -2,14 +2,26 @@ import { useState } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 
 export default function Counter() {
+  //new count
   const [count, setCount] = useState(0);
 
+  //addCoctail function
+  const handleAddCocktail = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+  };
+  //removeCoctail function
+  const handleRemoveCocktail = () => {
+    const newCount = count - 1;
+    setCount(newCount);
+  };
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text>Counter</Text>
+        <Text>Ajouter</Text>
         <Text>Vous avez ajouté {count} cocktails</Text>
-        <Button title="Cliquez ici" onPress={() => setCount(count + 1)} />
+        <Button title="Ajouter des cocktails" onPress={handleAddCocktail} />
+        <Button title="Suprimer des cocktails" onPress={handleRemoveCocktail} />
       </View>
     </View>
   );
